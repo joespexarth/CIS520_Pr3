@@ -10,7 +10,37 @@
 
 block_store_t *block_store_create()
 {
-    return NULL;
+    // Malloc space for new BS
+    block_store_t * newBlock = malloc(sizeof(block_store_t));       
+    if(newBlock == NULL)
+    { 
+        printf("Failed to malloc memory in BSC");
+        return NULL; 
+    }
+    // Initialize the new BS to zero
+    memset(newBlock, 0, sizeof(block_store_t));                     
+    // Initialize the bitmap
+    newBlock->bitmap = bitmap_overlay(BITMAP_SIZE_BITS, BITMAP_START_BLOCK);
+    if(newBlock->bitmap == NULL)
+    {
+        // Error handling if bitmap allocation fails
+        printf("Failed to allocate bitmap");
+        free(newBlock); // Free allocated memory
+        return NULL;
+    }
+    // Mark the blocks used by the bitmap as allocated
+    for (size_t i = 0; i < BITMAP_SIZE_BITS; i++)
+    {
+        if (!block_store_request(newBlock, BITMAP_START_BLOCK + i))
+        {
+            // Error handling if block allocation fails
+            printf("Failed to allocate block for bitmap");
+            bitmap_destroy(newBlock->bitmap); // Destroy bitmap overlay
+            free(newBlock); // Free allocated memory
+            return NULL;
+        }
+    }
+    return newBlock;
 }
 
 void block_store_destroy(block_store_t *const bs)
