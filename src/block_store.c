@@ -127,18 +127,26 @@ size_t block_store_get_total_blocks()
 
 size_t block_store_read(const block_store_t *const bs, const size_t block_id, void *buffer)
 {
-    UNUSED(bs);
-    UNUSED(block_id);
-    UNUSED(buffer);
-    return 0;
+    // Assert valid parameters
+    if (bs == NULL || buffer == NULL || (int)block_id < 0 || block_id > BLOCK_STORE_AVAIL_BLOCKS - 1)  return 0;
+
+    // Copy the data from the block store to the buffer
+    memcpy(buffer, bs->data[block_id], BLOCK_SIZE_BYTES);
+
+    // Return the number of bytes read
+    return BLOCK_SIZE_BYTES;
 }
 
 size_t block_store_write(block_store_t *const bs, const size_t block_id, const void *buffer)
 {
-    UNUSED(bs);
-    UNUSED(block_id);
-    UNUSED(buffer);
-    return 0;
+    // Assert valid parameters
+    if (bs == NULL || buffer == NULL || (int)block_id < 0 || block_id > BLOCK_STORE_AVAIL_BLOCKS - 1)  return 0;
+
+    // Copy the data from the block store to the buffer
+    memcpy(bs->data[block_id], buffer, BLOCK_SIZE_BYTES);
+
+    // Return the number of bytes read
+    return BLOCK_SIZE_BYTES;
 }
 
 block_store_t *block_store_deserialize(const char *const filename)
