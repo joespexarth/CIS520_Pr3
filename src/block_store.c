@@ -98,14 +98,25 @@ void block_store_release(block_store_t *const bs, const size_t block_id)
 
 size_t block_store_get_used_blocks(const block_store_t *const bs)
 {
-    UNUSED(bs);
-    return 0;
+    // Assert valid parameters
+    if(bs == NULL) return SIZE_MAX;
+    // Get the total number of bits set
+    size_t n = bitmap_total_set(bs->bitmap);
+    // Assert logical value
+    if(n <= 0 || n > BLOCK_STORE_NUM_BLOCKS) return SIZE_MAX;
+    // Return n - 1 as one block is used by the bitmap and not by the user, this method tells the user how many blocks they are using (Im assuming from test cases)
+    return n-1;
 }
 
 size_t block_store_get_free_blocks(const block_store_t *const bs)
 {
-    UNUSED(bs);
-    return 0;
+    // Assert valid parameters
+    if(bs == NULL) return SIZE_MAX;
+    // Get the total number of bits set
+    size_t n = bitmap_total_set(bs->bitmap);
+    // Assert logical value
+    if(n <= 0 || n > BLOCK_STORE_NUM_BLOCKS) return SIZE_MAX;
+    return (BITMAP_SIZE_BYTES * 8 ) - n;
 }
 
 size_t block_store_get_total_blocks()
