@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include "bitmap.h"
 #include "block_store.h"
+#include <string.h>
 // include more if you need
 
 // You might find this handy.  I put it around unused parameters, but you should
@@ -11,16 +12,17 @@
 block_store_t *block_store_create()
 {
     // Malloc space for new BS
-    block_store_t * newBlock = malloc(sizeof(block_store_t));       
+    block_store_t * newBlock = malloc(BLOCK_STORE_NUM_BYTES);       
     if(newBlock == NULL)
     { 
         printf("Failed to malloc memory in BSC");
         return NULL; 
     }
     // Initialize the new BS to zero
-    memset(newBlock, 0, sizeof(block_store_t));                     
+    memset(newBlock, 0, BLOCK_STORE_NUM_BYTES);                     
     // Initialize the bitmap
-    newBlock->bitmap = bitmap_overlay(BITMAP_SIZE_BITS, BITMAP_START_BLOCK);
+    //newBlock->bitmap = bitmap_overlay(BITMAP_SIZE_BITS, BITMAP_START_BLOCK);
+    /*
     if(newBlock->bitmap == NULL)
     {
         // Error handling if bitmap allocation fails
@@ -28,8 +30,9 @@ block_store_t *block_store_create()
         free(newBlock); // Free allocated memory
         return NULL;
     }
-    // Mark the blocks used by the bitmap as allocated
-    for (size_t i = 0; i < BITMAP_SIZE_BITS; i++)
+    // Mark the blocks used by the bitmap as allocated TODO: FIX this part is def incorrect
+    
+    for (size_t i = 0; i < BITMAP_SIZE_BYTES; i++)
     {
         if (!block_store_request(newBlock, BITMAP_START_BLOCK + i))
         {
@@ -40,6 +43,7 @@ block_store_t *block_store_create()
             return NULL;
         }
     }
+    */
     return newBlock;
 }
 
