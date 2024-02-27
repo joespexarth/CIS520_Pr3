@@ -66,10 +66,23 @@ void block_store_destroy(block_store_t *const bs)
     free(bs);
     return;
 }
+
 size_t block_store_allocate(block_store_t *const bs)
 {
-    UNUSED(bs);
-    return 0;
+    if(bs == NULL) return SIZE_MAX;
+    // Find the first zero
+    size_t firstOpenBlockId = bitmap_ffz(bs->bitmap);
+
+    if(firstOpenBlockId == SIZE_MAX) return SIZE_MAX;
+
+    // Set the block as active
+    block_store_request(bs, firstOpenBlockId);
+
+    // Actual implementation for when block store request is implemented
+    /*
+    if (!block_store_request(blockStore, firstOpenBlockId)) return SIZE_MAX;
+    */
+   return firstOpenBlockId;
 }
 
 bool block_store_request(block_store_t *const bs, const size_t block_id)
