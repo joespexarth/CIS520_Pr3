@@ -28,7 +28,7 @@ block_store_t *block_store_create()
     // Initialize the new BS to zero
     memset(blockStore, 0, BLOCK_STORE_NUM_BYTES);                
     // Initialize the bitmap -> project says FBM starts in block 127
-    blockStore->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, (blockStore->data[126]) );
+    blockStore->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, (blockStore->data[127]) );
     // Ensure proper memory initalization
     if(blockStore->bitmap == NULL)
     {
@@ -40,19 +40,14 @@ block_store_t *block_store_create()
     
     
     // Mark the block used by the bitmap as allocated
-    block_store_request(blockStore, 126);
-
-    // Actual implementation for when block store request is implemented
-    /*
-    if (!block_store_request(blockStore, 126))
+    if (!block_store_request(blockStore, 127))
     {
     // Error handling if block allocation fails
     printf("Failed to allocate block for bitmap");
     block_store_destroy(blockStore); // Free allocated memory
     return NULL;
     }
-    */
-
+    
     return blockStore;
 }
 
@@ -76,20 +71,21 @@ size_t block_store_allocate(block_store_t *const bs)
     if(firstOpenBlockId == SIZE_MAX) return SIZE_MAX;
 
     // Set the block as active
-    block_store_request(bs, firstOpenBlockId);
-
-    // Actual implementation for when block store request is implemented
-    /*
-    if (!block_store_request(blockStore, firstOpenBlockId)) return SIZE_MAX;
-    */
-   return firstOpenBlockId;
+    if (!block_store_request(bs, firstOpenBlockId)) return SIZE_MAX;
+    return firstOpenBlockId;
 }
 
 bool block_store_request(block_store_t *const bs, const size_t block_id)
 {
-    UNUSED(bs);
-    UNUSED(block_id);
-    return false;
+    // Assure valid parameters
+    if(bs == NULL || (int)block_id < 0 || block_id > BLOCK_STORE_AVAIL_BLOCKS -1 ) return false;
+    // Assure the desired block is not already allocated
+    if(bitmap_test(bs->bitmap, block_id)) return false;
+    // Set the corrisponding bit in the bitmap to on
+    bitmap_set(bs->bitmap, block_id);
+    // Assert the bit was successfully set
+    if(!bitmap_test(bs->bitmap, block_id)) return false;
+    return true;
 }
 
 void block_store_release(block_store_t *const bs, const size_t block_id)
