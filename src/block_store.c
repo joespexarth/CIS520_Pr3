@@ -77,9 +77,9 @@ size_t block_store_allocate(block_store_t *const bs)
 
 bool block_store_request(block_store_t *const bs, const size_t block_id)
 {
-    // Assure valid parameters
+    // Assert valid parameters
     if(bs == NULL || (int)block_id < 0 || block_id > BLOCK_STORE_AVAIL_BLOCKS -1 ) return false;
-    // Assure the desired block is not already allocated
+    // Assert the desired block is not already allocated
     if(bitmap_test(bs->bitmap, block_id)) return false;
     // Set the corrisponding bit in the bitmap to on
     bitmap_set(bs->bitmap, block_id);
@@ -90,8 +90,10 @@ bool block_store_request(block_store_t *const bs, const size_t block_id)
 
 void block_store_release(block_store_t *const bs, const size_t block_id)
 {
-    UNUSED(bs);
-    UNUSED(block_id);
+    // Assert valid parameters
+    if(bs == NULL || (int)block_id < 0 || block_id > BLOCK_STORE_AVAIL_BLOCKS -1 ) return;
+    // Free the desired block in the bitmap
+    bitmap_reset(bs->bitmap, block_id);
 }
 
 size_t block_store_get_used_blocks(const block_store_t *const bs)
