@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/bitmap.h
+stdint.h
+-
+stdlib.h
+-
+stddef.h
+-
+stdbool.h
+-
+
+../include/block_store.h
+stdlib.h
+-
+stdbool.h
+-
+
+/homes/brenth01/github/CIS520_Pr3/src/block_store.c
+stdio.h
+-
+stdint.h
+-
+bitmap.h
+/homes/brenth01/github/CIS520_Pr3/src/bitmap.h
+block_store.h
+/homes/brenth01/github/CIS520_Pr3/src/block_store.h
+string.h
+-
+

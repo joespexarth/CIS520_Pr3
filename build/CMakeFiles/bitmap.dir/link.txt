@@ -1,0 +1,2 @@
+/opt/software/software/binutils/2.34-GCCcore-9.3.0/bin/ar qc libbitmap.a  CMakeFiles/bitmap.dir/src/bitmap.c.o
+/opt/software/software/binutils/2.34-GCCcore-9.3.0/bin/ranlib libbitmap.a

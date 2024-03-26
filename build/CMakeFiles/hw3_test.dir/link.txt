@@ -1,0 +1,1 @@
+/opt/software/software/GCCcore/9.3.0/bin/c++  -std=c++11 -Wall -Wextra -Wshadow -Werror -Wno-sign-compare -D_XOPEN_SOURCE=500  -rdynamic CMakeFiles/hw3_test.dir/test/tests.cpp.o  -o hw3_test  -lgtest -lpthread libblock_store.a -lgtest -lpthread libbitmap.a 

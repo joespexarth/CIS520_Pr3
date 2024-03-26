@@ -1,0 +1,2 @@
+/opt/software/software/binutils/2.34-GCCcore-9.3.0/bin/ar qc libblock_store.a  CMakeFiles/block_store.dir/src/block_store.c.o
+/opt/software/software/binutils/2.34-GCCcore-9.3.0/bin/ranlib libblock_store.a

@@ -157,7 +157,26 @@ block_store_t *block_store_deserialize(const char *const filename)
 
 size_t block_store_serialize(const block_store_t *const bs, const char *const filename)
 {
-    UNUSED(bs);
-    UNUSED(filename);
+    // Assert valid parameters
+    if(bs == NULL || filename == NULL) return 0;
+
+    // Trys to open file write binary
+    FILE *file = fopen(filename, "wb");
+
+    // Assert file opened
+    if(file != NULL){
+
+        // Writes bs->data array to the file
+        int num = fwrite(bs->data, 1, BLOCK_STORE_NUM_BLOCKS * BLOCK_SIZE_BYTES, file);
+
+        // Closes file
+        fclose(file);
+
+        // Assert correct amount of elements have been written 
+        if(num == -1){
+            return 0;
+        }
+        return num;
+    }
     return 0;
 }

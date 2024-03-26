@@ -1,0 +1,5 @@
+/homes/brenth01/github/CIS520_Pr3/build/CMakeFiles/rebuild_cache.dir
+/homes/brenth01/github/CIS520_Pr3/build/CMakeFiles/edit_cache.dir
+/homes/brenth01/github/CIS520_Pr3/build/CMakeFiles/hw3_test.dir
+/homes/brenth01/github/CIS520_Pr3/build/CMakeFiles/bitmap.dir
+/homes/brenth01/github/CIS520_Pr3/build/CMakeFiles/block_store.dir

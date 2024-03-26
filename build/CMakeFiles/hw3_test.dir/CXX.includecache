@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/block_store.h
+stdlib.h
+-
+stdbool.h
+-
+
+/homes/brenth01/github/CIS520_Pr3/test/tests.cpp
+gtest/gtest.h
+-
+sys/stat.h
+-
+block_store.h
+/homes/brenth01/github/CIS520_Pr3/test/block_store.h
+
