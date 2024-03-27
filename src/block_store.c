@@ -151,8 +151,24 @@ size_t block_store_write(block_store_t *const bs, const size_t block_id, const v
 
 block_store_t *block_store_deserialize(const char *const filename)
 {
-    UNUSED(filename);
-    return NULL;
+    if(filename == NULL) return NULL;
+    FILE *file = fopen(filename, "rb");
+    if(file == NULL) {
+        return NULL;
+    }
+    block_store_t *bs = (block_store_t*)malloc(sizeof(block_store_t));
+    // Read the data from the file into the block store
+    size_t num_read = fread(bs->data, 1, BLOCK_STORE_NUM_BLOCKS * BLOCK_SIZE_BYTES, file);
+    fclose(file);
+
+    if(num_read != BLOCK_STORE_NUM_BLOCKS * BLOCK_SIZE_BYTES) {
+        free(bs); 
+        return NULL;
+    }
+
+    bs->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, bs->data[127]);
+
+    return bs;
 }
 
 size_t block_store_serialize(const block_store_t *const bs, const char *const filename)
