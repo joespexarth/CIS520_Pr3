@@ -29,7 +29,6 @@ block_store_t *block_store_create()
     memset(blockStore, 0, BLOCK_STORE_NUM_BYTES);                
     // Initialize the bitmap -> project says FBM starts in block 127
     blockStore->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, (blockStore->data[127]));
-    blockStore->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, (blockStore->data[128]));
 
     // Ensure proper memory initalization
     if(blockStore->bitmap == NULL)
@@ -177,7 +176,6 @@ block_store_t *block_store_deserialize(const char *const filename)
     }
 
     bs->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, bs->data[127]);
-    bs->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, bs->data[128]);
 
     return bs;
 }
