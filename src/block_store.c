@@ -115,7 +115,7 @@ size_t block_store_get_used_blocks(const block_store_t *const bs)
     // Assert logical value
     if(n <= 0 || n > BLOCK_STORE_NUM_BLOCKS) return SIZE_MAX;
     // Return n - 1 as one block is used by the bitmap and not by the user, this method tells the user how many blocks they are using (Im assuming from test cases)
-    return n-1;
+    return n;
 }
 
 size_t block_store_get_free_blocks(const block_store_t *const bs)
