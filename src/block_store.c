@@ -28,7 +28,9 @@ block_store_t *block_store_create()
     // Initialize the new BS to zero
     memset(blockStore, 0, BLOCK_STORE_NUM_BYTES);                
     // Initialize the bitmap -> project says FBM starts in block 127
-    blockStore->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, (blockStore->data[127]) );
+    blockStore->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, (blockStore->data[127]));
+    blockStore->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, (blockStore->data[128]));
+
     // Ensure proper memory initalization
     if(blockStore->bitmap == NULL)
     {
@@ -47,9 +49,17 @@ block_store_t *block_store_create()
     block_store_destroy(blockStore); // Free allocated memory
     return NULL;
     }
+    if (!block_store_request(blockStore, 128))
+    {
+    // Error handling if block allocation fails
+    printf("Failed to allocate block for bitmap");
+    block_store_destroy(blockStore); // Free allocated memory
+    return NULL;
+    }
     
     return blockStore;
 }
+
 
 void block_store_destroy(block_store_t *const bs)
 {
@@ -78,7 +88,7 @@ size_t block_store_allocate(block_store_t *const bs)
 bool block_store_request(block_store_t *const bs, const size_t block_id)
 {
     // Assert valid parameters
-    if(bs == NULL || (int)block_id < 0 || block_id > BLOCK_STORE_AVAIL_BLOCKS -1 ) return false;
+    if(bs == NULL || (int)block_id < 0 || block_id > BLOCK_STORE_AVAIL_BLOCKS) return false;
     // Assert the desired block is not already allocated
     if(bitmap_test(bs->bitmap, block_id)) return false;
     // Set the corrisponding bit in the bitmap to on
@@ -122,7 +132,7 @@ size_t block_store_get_free_blocks(const block_store_t *const bs)
 size_t block_store_get_total_blocks()
 {
     // Simply return the number of available user-addressable blocks
-    return BLOCK_STORE_AVAIL_BLOCKS;
+    return BLOCK_STORE_NUM_BLOCKS;
 }
 
 size_t block_store_read(const block_store_t *const bs, const size_t block_id, void *buffer)

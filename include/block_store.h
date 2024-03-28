@@ -12,17 +12,17 @@ extern "C"
 	// Constants
 #define BLOCK_STORE_NUM_BLOCKS 512        // 2^9 data block
 #define BLOCK_SIZE_BYTES 32        // 2^5 BYTES per block
-#define BITMAP_SIZE_BITS BLOCK_STORE_NUM_BLOCKS        // 2^9 bits
-#define BITMAP_SIZE_BYTES (BITMAP_SIZE_BITS / 8)
-#define BLOCK_STORE_AVAIL_BLOCKS (BLOCK_STORE_NUM_BLOCKS - 1) // First block consumed by the FBM
-#define BLOCK_STORE_NUM_BYTES (BLOCK_STORE_NUM_BLOCKS * BLOCK_SIZE_BYTES)
+#define BITMAP_SIZE_BITS BLOCK_STORE_NUM_BLOCKS // 512       // 2^9 bits
+#define BITMAP_SIZE_BYTES (BITMAP_SIZE_BITS / 8) // 32
+#define BLOCK_STORE_AVAIL_BLOCKS (BLOCK_STORE_NUM_BLOCKS - 1) // 511 // First block consumed by the FBM
+#define BLOCK_STORE_NUM_BYTES (BLOCK_STORE_NUM_BLOCKS * BLOCK_SIZE_BYTES) // 16384
 #define BITMAP_START_BLOCK 127
-#define BITMAP_NUM_BLOCKS (BITMAP_SIZE_BYTES / BLOCK_SIZE_BYTES)
+#define BITMAP_NUM_BLOCKS (BITMAP_SIZE_BYTES / BLOCK_SIZE_BYTES) // 1
 
 	// Declaring the struct but not implementing in the header allows us to prevent users
 	//  from using the object directly and monkeying with the contents
 	// They can only create pointers to the struct, which must be given out by us
-	// This enforces a black box device, but it can be restricting
+	// This enforces a black box device, but it can be restrictinggit
 	typedef struct block_store block_store_t;
 
 	///
