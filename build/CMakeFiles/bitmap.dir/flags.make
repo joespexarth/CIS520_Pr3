@@ -6,5 +6,5 @@ C_FLAGS = -std=c11 -Wall -Wextra -Wshadow -Werror -D_XOPEN_SOURCE=500
 
 C_DEFINES = 
 
-C_INCLUDES = -I/homes/brenth01/github/CIS520_Pr3/include 
+C_INCLUDES = -I/homes/gmwhitehair/Project3Github/CIS520_Pr3/include 
 

@@ -43,10 +43,10 @@ RM = /opt/software/software/CMake/3.16.4-GCCcore-9.3.0/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /homes/brenth01/github/CIS520_Pr3
+CMAKE_SOURCE_DIR = /homes/gmwhitehair/Project3Github/CIS520_Pr3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /homes/brenth01/github/CIS520_Pr3/build
+CMAKE_BINARY_DIR = /homes/gmwhitehair/Project3Github/CIS520_Pr3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/block_store.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/block_store.dir/flags.make
 
 CMakeFiles/block_store.dir/src/block_store.c.o: CMakeFiles/block_store.dir/flags.make
 CMakeFiles/block_store.dir/src/block_store.c.o: ../src/block_store.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/brenth01/github/CIS520_Pr3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/block_store.dir/src/block_store.c.o"
-	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/block_store.dir/src/block_store.c.o   -c /homes/brenth01/github/CIS520_Pr3/src/block_store.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/gmwhitehair/Project3Github/CIS520_Pr3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/block_store.dir/src/block_store.c.o"
+	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/block_store.dir/src/block_store.c.o   -c /homes/gmwhitehair/Project3Github/CIS520_Pr3/src/block_store.c
 
 CMakeFiles/block_store.dir/src/block_store.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/block_store.dir/src/block_store.c.i"
-	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/brenth01/github/CIS520_Pr3/src/block_store.c > CMakeFiles/block_store.dir/src/block_store.c.i
+	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/gmwhitehair/Project3Github/CIS520_Pr3/src/block_store.c > CMakeFiles/block_store.dir/src/block_store.c.i
 
 CMakeFiles/block_store.dir/src/block_store.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/block_store.dir/src/block_store.c.s"
-	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/brenth01/github/CIS520_Pr3/src/block_store.c -o CMakeFiles/block_store.dir/src/block_store.c.s
+	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/gmwhitehair/Project3Github/CIS520_Pr3/src/block_store.c -o CMakeFiles/block_store.dir/src/block_store.c.s
 
 # Object files for target block_store
 block_store_OBJECTS = \
@@ -80,7 +80,7 @@ block_store_EXTERNAL_OBJECTS =
 libblock_store.a: CMakeFiles/block_store.dir/src/block_store.c.o
 libblock_store.a: CMakeFiles/block_store.dir/build.make
 libblock_store.a: CMakeFiles/block_store.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/brenth01/github/CIS520_Pr3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libblock_store.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/gmwhitehair/Project3Github/CIS520_Pr3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libblock_store.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/block_store.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/block_store.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/block_store.dir/clean:
 .PHONY : CMakeFiles/block_store.dir/clean
 
 CMakeFiles/block_store.dir/depend:
-	cd /homes/brenth01/github/CIS520_Pr3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/brenth01/github/CIS520_Pr3 /homes/brenth01/github/CIS520_Pr3 /homes/brenth01/github/CIS520_Pr3/build /homes/brenth01/github/CIS520_Pr3/build /homes/brenth01/github/CIS520_Pr3/build/CMakeFiles/block_store.dir/DependInfo.cmake --color=$(COLOR)
+	cd /homes/gmwhitehair/Project3Github/CIS520_Pr3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/gmwhitehair/Project3Github/CIS520_Pr3 /homes/gmwhitehair/Project3Github/CIS520_Pr3 /homes/gmwhitehair/Project3Github/CIS520_Pr3/build /homes/gmwhitehair/Project3Github/CIS520_Pr3/build /homes/gmwhitehair/Project3Github/CIS520_Pr3/build/CMakeFiles/block_store.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/block_store.dir/depend
 

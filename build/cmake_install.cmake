@@ -1,4 +1,4 @@
-# Install script for directory: /homes/brenth01/github/CIS520_Pr3
+# Install script for directory: /homes/gmwhitehair/Project3Github/CIS520_Pr3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/homes/brenth01/github/CIS520_Pr3/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/homes/gmwhitehair/Project3Github/CIS520_Pr3/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

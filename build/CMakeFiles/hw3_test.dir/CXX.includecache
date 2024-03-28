@@ -12,11 +12,11 @@ stdlib.h
 stdbool.h
 -
 
-/homes/brenth01/github/CIS520_Pr3/test/tests.cpp
+/homes/gmwhitehair/Project3Github/CIS520_Pr3/test/tests.cpp
 gtest/gtest.h
 -
 sys/stat.h
 -
 block_store.h
-/homes/brenth01/github/CIS520_Pr3/test/block_store.h
+/homes/gmwhitehair/Project3Github/CIS520_Pr3/test/block_store.h
 

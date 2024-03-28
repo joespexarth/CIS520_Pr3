@@ -43,10 +43,10 @@ RM = /opt/software/software/CMake/3.16.4-GCCcore-9.3.0/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /homes/brenth01/github/CIS520_Pr3
+CMAKE_SOURCE_DIR = /homes/gmwhitehair/Project3Github/CIS520_Pr3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /homes/brenth01/github/CIS520_Pr3/build
+CMAKE_BINARY_DIR = /homes/gmwhitehair/Project3Github/CIS520_Pr3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/bitmap.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/bitmap.dir/flags.make
 
 CMakeFiles/bitmap.dir/src/bitmap.c.o: CMakeFiles/bitmap.dir/flags.make
 CMakeFiles/bitmap.dir/src/bitmap.c.o: ../src/bitmap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/brenth01/github/CIS520_Pr3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/bitmap.dir/src/bitmap.c.o"
-	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/bitmap.dir/src/bitmap.c.o   -c /homes/brenth01/github/CIS520_Pr3/src/bitmap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/gmwhitehair/Project3Github/CIS520_Pr3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/bitmap.dir/src/bitmap.c.o"
+	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/bitmap.dir/src/bitmap.c.o   -c /homes/gmwhitehair/Project3Github/CIS520_Pr3/src/bitmap.c
 
 CMakeFiles/bitmap.dir/src/bitmap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/bitmap.dir/src/bitmap.c.i"
-	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/brenth01/github/CIS520_Pr3/src/bitmap.c > CMakeFiles/bitmap.dir/src/bitmap.c.i
+	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/gmwhitehair/Project3Github/CIS520_Pr3/src/bitmap.c > CMakeFiles/bitmap.dir/src/bitmap.c.i
 
 CMakeFiles/bitmap.dir/src/bitmap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/bitmap.dir/src/bitmap.c.s"
-	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/brenth01/github/CIS520_Pr3/src/bitmap.c -o CMakeFiles/bitmap.dir/src/bitmap.c.s
+	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/gmwhitehair/Project3Github/CIS520_Pr3/src/bitmap.c -o CMakeFiles/bitmap.dir/src/bitmap.c.s
 
 # Object files for target bitmap
 bitmap_OBJECTS = \
@@ -80,7 +80,7 @@ bitmap_EXTERNAL_OBJECTS =
 libbitmap.a: CMakeFiles/bitmap.dir/src/bitmap.c.o
 libbitmap.a: CMakeFiles/bitmap.dir/build.make
 libbitmap.a: CMakeFiles/bitmap.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/brenth01/github/CIS520_Pr3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libbitmap.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/gmwhitehair/Project3Github/CIS520_Pr3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libbitmap.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/bitmap.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bitmap.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/bitmap.dir/clean:
 .PHONY : CMakeFiles/bitmap.dir/clean
 
 CMakeFiles/bitmap.dir/depend:
-	cd /homes/brenth01/github/CIS520_Pr3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/brenth01/github/CIS520_Pr3 /homes/brenth01/github/CIS520_Pr3 /homes/brenth01/github/CIS520_Pr3/build /homes/brenth01/github/CIS520_Pr3/build /homes/brenth01/github/CIS520_Pr3/build/CMakeFiles/bitmap.dir/DependInfo.cmake --color=$(COLOR)
+	cd /homes/gmwhitehair/Project3Github/CIS520_Pr3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/gmwhitehair/Project3Github/CIS520_Pr3 /homes/gmwhitehair/Project3Github/CIS520_Pr3 /homes/gmwhitehair/Project3Github/CIS520_Pr3/build /homes/gmwhitehair/Project3Github/CIS520_Pr3/build /homes/gmwhitehair/Project3Github/CIS520_Pr3/build/CMakeFiles/bitmap.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/bitmap.dir/depend
 

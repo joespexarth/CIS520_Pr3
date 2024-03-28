@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++11 -Wall -Wextra -Wshadow -Werror -Wno-sign-compare -D_XOPEN
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/homes/brenth01/github/CIS520_Pr3/include 
+CXX_INCLUDES = -I/homes/gmwhitehair/Project3Github/CIS520_Pr3/include 
 
