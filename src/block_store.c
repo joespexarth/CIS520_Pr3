@@ -177,6 +177,7 @@ block_store_t *block_store_deserialize(const char *const filename)
     }
 
     bs->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, bs->data[127]);
+    bs->bitmap = bitmap_overlay(BITMAP_SIZE_BYTES * 8, bs->data[128]);
 
     return bs;
 }
